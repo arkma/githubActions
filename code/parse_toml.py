@@ -1,18 +1,14 @@
-"""Module providing a function printing python version."""
 import os
 import tomllib
 import argparse
 
 
 def read_toml(path):
-    '''This function read toml file and return nested dictionaries'''
-    with open(path,'rb') as f:
+    with open(path, 'rb') as f:
         return tomllib.load(f)
 
 
 def search_nested_dict(d, key):
-    ''' Seach value for specified key `key` in nested dictionary `d`
-    '''
     match_items = []
     stack = [d]
     while stack:
@@ -20,13 +16,12 @@ def search_nested_dict(d, key):
         for k, v in curr_dict.items():
             if isinstance(v, dict):
                 stack.append(v)
-            if k== key:
+            if k == key:
                 match_items.append(v)
     return match_items
 
 
 def main():
-    ''' Main function'''
     parser = argparse.ArgumentParser(
         description="Search for specified key elements in a toml file.AAAAA"
     )
@@ -34,7 +29,7 @@ def main():
         '-p', '--path', required=True, help="Path to the toml file."
     )
     parser.add_argument(
-        '-k','--key', required=True, help="Key to search."
+        '-k', '--key', required=True, help="Key to search."
     )
 
     args = parser.parse_args()
