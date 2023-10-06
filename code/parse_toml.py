@@ -20,7 +20,7 @@ def search_nested_dict(d, key):
         for k, v in curr_dict.items():
             if isinstance(v, dict):
                 stack.append(v)
-            if k == key:
+            if k== key:
                 match_items.append(v)
     return match_items
 
@@ -28,7 +28,7 @@ def search_nested_dict(d, key):
 def main():
     ''' Main function'''
     parser = argparse.ArgumentParser(
-        description="Search for specified key elements in a toml file."
+        description="Search for specified key elements in a toml file.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     )
     parser.add_argument(
         '-p', '--path', required=True, help="Path to the toml file."
