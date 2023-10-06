@@ -1,9 +1,11 @@
+"""Module providing a function printing python version."""
 import os
 import tomllib
 import argparse
 
 
 def read_toml(path):
+    '''This function read toml file and return nested dictionaries'''
     with open(path,'rb') as f:
         return tomllib.load(f)
 
