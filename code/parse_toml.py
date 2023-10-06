@@ -4,7 +4,7 @@ import argparse
 
 
 def read_toml(path):
-    with open(path, 'rb') as f:
+    with open(path,'rb') as f:
         return tomllib.load(f)
 
 
