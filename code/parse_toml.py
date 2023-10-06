@@ -28,7 +28,7 @@ def search_nested_dict(d, key):
 def main():
     ''' Main function'''
     parser = argparse.ArgumentParser(
-        description="Search for specified key elements in a toml file.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        description="Search for specified key elements in a toml file.AAAAA"
     )
     parser.add_argument(
         '-p', '--path', required=True, help="Path to the toml file."
