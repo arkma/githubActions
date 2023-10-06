@@ -1,0 +1,17 @@
+name: Pep8
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }} # Check only last commit
+    - name: 'Run PEP8'
+      uses: quentinguidee/pep8-action@v1
+      with:
+        arguments: '--max-line-length=120'
